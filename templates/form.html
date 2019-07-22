@@ -1,0 +1,22 @@
+<html>
+	<head>  <link rel="stylesheet"  href="{{ url_for('static', filename='style.css') }}" /></head>
+	<body>
+		<div class="container">
+		<div class="heading">
+			<h1>Reddit Flair Detector</h1>
+		</div>
+		
+
+		<form method="POST" action="/">
+			<div class="form-container">
+					<h3>Enter the URL</h3>
+				<div class="text-area">
+				<input type="text" name="url" id="textBox"></div>
+				<div class="btn-container">
+				<input  type="submit" class="btn" value="submit">
+			</div></div>
+			
+		</form>
+	</div>
+	</body>
+</html>
