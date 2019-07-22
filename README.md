@@ -3,7 +3,7 @@ A reddit flair detector project for Precog :heart:
 
 This is a flask based project hosted on [Heroku] (https://evening-basin-22130.herokuapp.com/). It is developed entirely using Python.
 
-PRAW was used to extract **170 posts** belonging to each of the flairs mentioned at `/r/india`. 170 data per flair were chosen because a `memory limit error` showed up while trying to store more data than that on mongoDB. Running this project on Heroku often gave a `timeout error` when the data was extracted from mongoDB Atlas as it returns data in a batch of few hundreds and stops in between batches. To prevent that from happening, the code has been tweaked a little to read from a **_pickle_** file rather than from the database. Everything that is on mongo database has also been store in a file called `data.pickle`.
+PRAW was used to extract **170 posts** belonging to each of the flairs mentioned at `/r/india`. 170 data per flair were chosen because a `memory limit error` showed up while trying to store more data than that on mongoDB. Running this project on Heroku often gave a `timeout error` when the data was extracted from mongoDB Atlas as it returns data in a batch of few hundreds and stops in between batches. To prevent that from happening, the code was tweaked a little to read from a **_pickle_** file rather than from the database. Everything that is on mongo database was also store in a file called `data.pickle` for Heroku. Since the file was too big and the code runs fine on local machine, the file was disregarded while uploading the project to Github.
 
 The document was processed using `nltk` and stored on mongoDB Atlas. 
 
@@ -78,4 +78,18 @@ The list of all the features and the models used, along with the accuracy of the
 
 While searching for a particular flair as a keyword instead of using a query, the accuracy went up to 70+. But the predictions were off by a lot. Later it was found that searching for data using a keyword resulted in a lot of data belonging to popular flairs like Politics and very few data on flairs like Food and AMA. This increased the accuracy as a lot of posts were predicted as Politics. Using queries to find posts, that strictly belongs to a certain flair, resulted in decrease in the accuracy percent but led to more matches in terms of prediction. 
 The results obtained using MLP were the best out of all the models but the model was discarded because of latency.
+
+### Dependencies
+All the dependencies have been listed on the file [requirements.txt] (https://github.com/dibyaaaaax/flairDetector/blob/master/requirements.txt).
+
+## How to run
+
+### Clone the project to the local machine.
+
+### Install the dependencies using 
+`pip install -r requirements.txt`
+
+### Run
+`python app.py `
+
 
