@@ -86,7 +86,11 @@ All the dependencies have been listed on the file [requirements.txt] (https://gi
 
 ### Clone the project to the local machine.
 
-### Install the dependencies using 
+### Create a virtual environment and activate it.
+`virtualenv env`
+`env\Scripts\activate`
+
+### Install the dependencies using: 
 `pip install -r requirements.txt`
 
 ### Run
